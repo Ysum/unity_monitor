@@ -7,14 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <OSCKit/OSCKit.h>
 #import "PDPatch.h"
+//#import "OscHandler.h"
 
+//@class OscHandler;
 
-@interface ViewController : UIViewController <OSCServerDelegate>
+@interface MonitorViewController : UIViewController
 
-@property (strong, nonatomic) OSCServer *server;
 @property (strong, nonatomic) PDPatch *patch;
+@property (strong, nonatomic) OscHandler *oschandler;
+
 
 @property (weak, nonatomic) IBOutlet UILabel *subsection_label;
 @property (weak, nonatomic) IBOutlet UILabel *parameter_label;
@@ -23,8 +25,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *mute_button;
 @property (weak, nonatomic) IBOutlet UISlider *freq_slider;
 
-
-- (void)handleMessage:(OSCMessage*)message;
+- (void)displayParam: (NSString *)parameter withValue: (NSString *)value;
+- (void)vibrate;
 
 
 @end

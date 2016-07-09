@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1543EFD81D314EDB003EE4D3 /* OscHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1543EFD71D314EDB003EE4D3 /* OscHandler.m */; };
 		1551C5601CEB2E560051682F /* main.pd in Resources */ = {isa = PBXBuildFile; fileRef = 1551C55F1CEB2E560051682F /* main.pd */; };
 		157F40271CC6B00E009C9931 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 157F40261CC6B00E009C9931 /* Security.framework */; };
 		157F40291CC6B017009C9931 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 157F40281CC6B017009C9931 /* CFNetwork.framework */; };
@@ -14,7 +15,7 @@
 		15D96E581CE7860200B3250A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15D96E571CE7860200B3250A /* AudioToolbox.framework */; };
 		15DDB6891CBBB77A002B8163 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DDB6881CBBB77A002B8163 /* main.m */; };
 		15DDB68C1CBBB77A002B8163 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DDB68B1CBBB77A002B8163 /* AppDelegate.m */; };
-		15DDB68F1CBBB77A002B8163 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DDB68E1CBBB77A002B8163 /* ViewController.m */; };
+		15DDB68F1CBBB77A002B8163 /* MonitorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DDB68E1CBBB77A002B8163 /* MonitorViewController.m */; };
 		15DDB6921CBBB77A002B8163 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15DDB6901CBBB77A002B8163 /* Main.storyboard */; };
 		15DDB6941CBBB77A002B8163 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15DDB6931CBBB77A002B8163 /* Images.xcassets */; };
 		15DDB6971CBBB77A002B8163 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15DDB6951CBBB77A002B8163 /* LaunchScreen.xib */; };
@@ -33,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1543EFD61D314EDB003EE4D3 /* OscHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscHandler.h; sourceTree = "<group>"; };
+		1543EFD71D314EDB003EE4D3 /* OscHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OscHandler.m; sourceTree = "<group>"; };
 		1551C55F1CEB2E560051682F /* main.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.pd; sourceTree = "<group>"; };
 		157F40261CC6B00E009C9931 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		157F40281CC6B017009C9931 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -44,8 +47,8 @@
 		15DDB6881CBBB77A002B8163 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		15DDB68A1CBBB77A002B8163 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		15DDB68B1CBBB77A002B8163 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		15DDB68D1CBBB77A002B8163 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		15DDB68E1CBBB77A002B8163 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		15DDB68D1CBBB77A002B8163 /* MonitorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonitorViewController.h; sourceTree = "<group>"; };
+		15DDB68E1CBBB77A002B8163 /* MonitorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MonitorViewController.m; sourceTree = "<group>"; };
 		15DDB6911CBBB77A002B8163 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		15DDB6931CBBB77A002B8163 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		15DDB6961CBBB77A002B8163 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -108,8 +111,10 @@
 				15DDB68B1CBBB77A002B8163 /* AppDelegate.m */,
 				158267281CEA71C2001AAA9B /* PDPatch.h */,
 				158267291CEA71C2001AAA9B /* PDPatch.m */,
-				15DDB68D1CBBB77A002B8163 /* ViewController.h */,
-				15DDB68E1CBBB77A002B8163 /* ViewController.m */,
+				15DDB68D1CBBB77A002B8163 /* MonitorViewController.h */,
+				15DDB68E1CBBB77A002B8163 /* MonitorViewController.m */,
+				1543EFD61D314EDB003EE4D3 /* OscHandler.h */,
+				1543EFD71D314EDB003EE4D3 /* OscHandler.m */,
 				15DDB6901CBBB77A002B8163 /* Main.storyboard */,
 				15DDB6931CBBB77A002B8163 /* Images.xcassets */,
 				15DDB6951CBBB77A002B8163 /* LaunchScreen.xib */,
@@ -317,8 +322,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1582672A1CEA71C2001AAA9B /* PDPatch.m in Sources */,
-				15DDB68F1CBBB77A002B8163 /* ViewController.m in Sources */,
+				15DDB68F1CBBB77A002B8163 /* MonitorViewController.m in Sources */,
 				15DDB68C1CBBB77A002B8163 /* AppDelegate.m in Sources */,
+				1543EFD81D314EDB003EE4D3 /* OscHandler.m in Sources */,
 				15DDB6891CBBB77A002B8163 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
