@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PDAudioController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) PdAudioController *pd;
+
 
 
 @end

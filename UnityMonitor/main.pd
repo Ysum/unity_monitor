@@ -1,0 +1,29 @@
+#N canvas 939 300 633 365 10;
+#X obj 38 103 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 38 131 s mute;
+#X obj 253 165 *~;
+#X obj 293 164 r mute;
+#X obj 249 204 dac~;
+#X obj -31 79 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 440 256;
+#X obj 256 48 sig~;
+#X obj -31 127 s freq;
+#X obj 257 14 r freq;
+#X obj 256 76 osc~;
+#X obj -32 8 loadbang;
+#X msg -32 30 440;
+#X obj 255 111 *~ 0.25;
+#X obj 294 62 r volume;
+#X connect 0 0 1 0;
+#X connect 2 0 4 0;
+#X connect 2 0 4 1;
+#X connect 3 0 2 1;
+#X connect 5 0 7 0;
+#X connect 6 0 9 0;
+#X connect 8 0 6 0;
+#X connect 9 0 12 0;
+#X connect 10 0 11 0;
+#X connect 11 0 5 0;
+#X connect 12 0 2 0;
+#X connect 13 0 12 1;
