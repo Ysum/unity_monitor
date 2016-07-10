@@ -1,0 +1,32 @@
+PODS:
+  - CocoaAsyncSocket (7.4.3):
+    - CocoaAsyncSocket/All (= 7.4.3)
+  - CocoaAsyncSocket/All (7.4.3):
+    - CocoaAsyncSocket/GCD
+    - CocoaAsyncSocket/RunLoop
+  - CocoaAsyncSocket/GCD (7.4.3)
+  - CocoaAsyncSocket/RunLoop (7.4.3)
+  - libpd (0.8.3)
+  - OSCKit (0.3.5):
+    - CocoaAsyncSocket (~> 7.3)
+
+DEPENDENCIES:
+  - libpd (from `https://github.com/libpd/libpd`)
+  - OSCKit
+
+EXTERNAL SOURCES:
+  libpd:
+    :git: https://github.com/libpd/libpd
+    :submodules: true
+
+CHECKOUT OPTIONS:
+  libpd:
+    :commit: ad548cc7600e7f95a894389764bca822c0b0cdae
+    :git: https://github.com/libpd/libpd
+
+SPEC CHECKSUMS:
+  CocoaAsyncSocket: a18c75dca4b08723628a0bacca6e94803d90be91
+  libpd: d758aa585c2f1d6f0d85fcfc99da4ec509172e75
+  OSCKit: 4470dbd30bc792dcf66dc4e7b5d1ec7174add33c
+
+COCOAPODS: 0.39.0

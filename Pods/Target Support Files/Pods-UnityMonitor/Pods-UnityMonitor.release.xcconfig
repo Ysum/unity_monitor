@@ -1,0 +1,5 @@
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/CocoaAsyncSocket" "${PODS_ROOT}/Headers/Public/OSCKit" "${PODS_ROOT}/Headers/Public/libpd"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/CocoaAsyncSocket" -isystem "${PODS_ROOT}/Headers/Public/OSCKit" -isystem "${PODS_ROOT}/Headers/Public/libpd"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"CocoaAsyncSocket" -l"OSCKit" -l"c++" -l"libpd" -l"stdc++" -framework "AVFoundation" -framework "AudioToolbox" -framework "CFNetwork" -framework "Foundation" -framework "Security"
+PODS_ROOT = ${SRCROOT}/Pods

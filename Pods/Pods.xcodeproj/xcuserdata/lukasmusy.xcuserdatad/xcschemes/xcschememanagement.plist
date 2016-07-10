@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>CocoaAsyncSocket.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>OSCKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-UnityMonitor.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>libpd.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>0F47FB0D9A2F6A2C182D2F133E328ACC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1481D1BABFC1F2DC4CDB334029A49112</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>48F687CDE9990BD471D7883061F7E5D4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D4E27A8E243055098A6C55DDABFE070E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
