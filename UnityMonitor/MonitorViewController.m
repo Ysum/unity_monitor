@@ -6,9 +6,11 @@
 //  Copyright (c) 2016 Lukas Musy. All rights reserved.
 //
 
-#import "MonitorViewController.h"
 #import <AudioToolbox/AudioServices.h>
 #import <objc/runtime.h>
+#import "MonitorViewController.h"
+#import "OscHandler.h"
+
 
 
 @interface MonitorViewController ()

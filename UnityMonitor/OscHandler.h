@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <OSCKit/OSCKit.h>
-#import "MonitorViewController.h"
+
+@class MonitorViewController;
 
 @interface OscHandler : NSObject <OSCServerDelegate>
 

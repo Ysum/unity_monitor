@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "PDPatch.h"
-//#import "OscHandler.h"
 
-//@class OscHandler;
+@class OscHandler;
 
 @interface MonitorViewController : UIViewController
 

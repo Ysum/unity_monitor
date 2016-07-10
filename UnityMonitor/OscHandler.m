@@ -7,6 +7,7 @@
 //
 
 #import "OscHandler.h"
+#import "MonitorViewController.h"
 
 #define RECEIVEPORT 3333
 
