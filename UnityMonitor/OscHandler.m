@@ -33,9 +33,7 @@
     if ([[components objectAtIndex:1] isEqualToString:@"profiler"]) {
         NSString *parameter = [components objectAtIndex:2];
         NSString *args = [[message.arguments valueForKey:@"description"] componentsJoinedByString:@":"];
-        //        NSString *subsection =[components objectAtIndex:1];
-        //        NSString *subsection_formatted = [[subsection stringByReplacingOccurrencesOfString:@"_" withString:@" "]capitalizedString];
-        
+
         
         NSString *param_formated_sel = [parameter stringByReplacingOccurrencesOfString:@" " withString:@"_"];
         param_formated_sel = [param_formated_sel lowercaseString];
@@ -53,11 +51,24 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.owner displayParam:[container objectAtIndex:0] withValue: [container objectAtIndex:1]];
     });
-    
+}
+
+- (void)triangles:(NSArray *)container{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.owner displayParam:[container objectAtIndex:0] withValue: [container objectAtIndex:1]];
+    });
+}
+
+- (void)gc_allocated:(NSArray *)container{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.owner displayParam:[container objectAtIndex:0] withValue: [container objectAtIndex:1]];
+    });
 }
 
 - (void)mesh_memory:(NSArray *)container{
-    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.owner displayParam:[container objectAtIndex:0] withValue: [container objectAtIndex:1]];
+    });
 }
 
 - (void)contacts:(NSArray *)container{
@@ -66,6 +77,30 @@
             [self.owner vibrate];
         });
     }
+}
+
+- (void)rendering:(NSArray *)container{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.owner displayParam:[container objectAtIndex:0] withValue: [container objectAtIndex:1]];
+    });
+}
+
+- (void)physics:(NSArray *)container{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.owner displayParam:[container objectAtIndex:0] withValue: [container objectAtIndex:1]];
+    });
+}
+
+- (void)active_rigidbodies:(NSArray *)container{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.owner displayParam:[container objectAtIndex:0] withValue: [container objectAtIndex:1]];
+    });
+}
+
+- (void)total_audio_cpu:(NSArray *)container{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.owner displayParam:[container objectAtIndex:0] withValue: [container objectAtIndex:1]];
+    });
 }
 
 @end

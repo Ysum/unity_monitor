@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1543EFD81D314EDB003EE4D3 /* OscHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1543EFD71D314EDB003EE4D3 /* OscHandler.m */; };
 		1551C5601CEB2E560051682F /* main.pd in Resources */ = {isa = PBXBuildFile; fileRef = 1551C55F1CEB2E560051682F /* main.pd */; };
+		156FDDE11D33973200FADDCF /* PDController.m in Sources */ = {isa = PBXBuildFile; fileRef = 156FDDE01D33973200FADDCF /* PDController.m */; };
 		157F40271CC6B00E009C9931 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 157F40261CC6B00E009C9931 /* Security.framework */; };
 		157F40291CC6B017009C9931 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 157F40281CC6B017009C9931 /* CFNetwork.framework */; };
 		1582672A1CEA71C2001AAA9B /* PDPatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 158267291CEA71C2001AAA9B /* PDPatch.m */; };
@@ -37,6 +38,8 @@
 		1543EFD61D314EDB003EE4D3 /* OscHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscHandler.h; sourceTree = "<group>"; };
 		1543EFD71D314EDB003EE4D3 /* OscHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OscHandler.m; sourceTree = "<group>"; };
 		1551C55F1CEB2E560051682F /* main.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.pd; sourceTree = "<group>"; };
+		156FDDDF1D33973200FADDCF /* PDController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDController.h; sourceTree = "<group>"; };
+		156FDDE01D33973200FADDCF /* PDController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDController.m; sourceTree = "<group>"; };
 		157F40261CC6B00E009C9931 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		157F40281CC6B017009C9931 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		158267281CEA71C2001AAA9B /* PDPatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDPatch.h; sourceTree = "<group>"; };
@@ -82,6 +85,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		156FDDE21D33973A00FADDCF /* PD */ = {
+			isa = PBXGroup;
+			children = (
+				156FDDDF1D33973200FADDCF /* PDController.h */,
+				156FDDE01D33973200FADDCF /* PDController.m */,
+				158267281CEA71C2001AAA9B /* PDPatch.h */,
+				158267291CEA71C2001AAA9B /* PDPatch.m */,
+			);
+			name = PD;
+			sourceTree = "<group>";
+		};
 		15DDB67A1CBBB77A002B8163 = {
 			isa = PBXGroup;
 			children = (
@@ -109,12 +123,11 @@
 			children = (
 				15DDB68A1CBBB77A002B8163 /* AppDelegate.h */,
 				15DDB68B1CBBB77A002B8163 /* AppDelegate.m */,
-				158267281CEA71C2001AAA9B /* PDPatch.h */,
-				158267291CEA71C2001AAA9B /* PDPatch.m */,
 				15DDB68D1CBBB77A002B8163 /* MonitorViewController.h */,
 				15DDB68E1CBBB77A002B8163 /* MonitorViewController.m */,
 				1543EFD61D314EDB003EE4D3 /* OscHandler.h */,
 				1543EFD71D314EDB003EE4D3 /* OscHandler.m */,
+				156FDDE21D33973A00FADDCF /* PD */,
 				15DDB6901CBBB77A002B8163 /* Main.storyboard */,
 				15DDB6931CBBB77A002B8163 /* Images.xcassets */,
 				15DDB6951CBBB77A002B8163 /* LaunchScreen.xib */,
@@ -326,6 +339,7 @@
 				15DDB68C1CBBB77A002B8163 /* AppDelegate.m in Sources */,
 				1543EFD81D314EDB003EE4D3 /* OscHandler.m in Sources */,
 				15DDB6891CBBB77A002B8163 /* main.m in Sources */,
+				156FDDE11D33973200FADDCF /* PDController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
