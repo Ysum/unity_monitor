@@ -28,47 +28,25 @@
 }
 
 - (void)handleMessage:(OSCMessage*)message {
+    
     //split address
     NSArray *components = [message.address componentsSeparatedByString:@"/"];
     if ([[components objectAtIndex:1] isEqualToString:@"UnityWatchdog"]) {
+        
+        //get adress and values fields
         NSString *displaySlot = [components objectAtIndex:2];
         int slotNumber = [[displaySlot substringFromIndex:[displaySlot length]-1] intValue];
         NSString *parameter = [components objectAtIndex:3];
         NSString *args = [[message.arguments valueForKey:@"description"] componentsJoinedByString:@":"];
-
         
-        NSString *param_formated_sel = [parameter stringByReplacingOccurrencesOfString:@" " withString:@"_"];
-        param_formated_sel = [param_formated_sel lowercaseString];
-        param_formated_sel = [param_formated_sel stringByAppendingString:@":"];
-        
-//        SEL selector = NSSelectorFromString(param_formated_sel);
-//        if ([self respondsToSelector:selector]) {
-//            [self performSelector:selector withObject:[NSArray arrayWithObjects:parameter, args, nil]];
-//            
-//        }
+        //notify view
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.owner displayParam:parameter withValue: args inSlot:slotNumber];
                 });
-        
     }
-    
     
 }
 
-//- (void)vsync:(NSArray *)container{
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        [self.owner displayParam:[container objectAtIndex:0] withValue: [container objectAtIndex:1]];
-//    });
-//}
-//
-//
-//- (void)contacts:(NSArray *)container{
-//    if ([[container objectAtIndex:1] isEqualToString:@"1"]) {
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            [self.owner vibrate];
-//        });
-//    }
-//}
 
 
 
