@@ -55,7 +55,7 @@
 		15DDB6911CBBB77A002B8163 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		15DDB6931CBBB77A002B8163 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		15DDB6961CBBB77A002B8163 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		15DDB69C1CBBB77A002B8163 /* UnityMonitorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnityMonitorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		15DDB69C1CBBB77A002B8163 /* WatchdogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WatchdogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		15DDB6A11CBBB77A002B8163 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15DDB6A21CBBB77A002B8163 /* UnityMonitorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnityMonitorTests.m; sourceTree = "<group>"; };
 		3BFF110FD1FDAFF9747E3B49 /* Pods-UnityMonitor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnityMonitor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnityMonitor/Pods-UnityMonitor.debug.xcconfig"; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				15DDB6831CBBB77A002B8163 /* Watchdog.app */,
-				15DDB69C1CBBB77A002B8163 /* UnityMonitorTests.xctest */,
+				15DDB69C1CBBB77A002B8163 /* WatchdogTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -184,9 +184,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		15DDB6821CBBB77A002B8163 /* UnityMonitor */ = {
+		15DDB6821CBBB77A002B8163 /* Watchdog */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 15DDB6A61CBBB77A002B8163 /* Build configuration list for PBXNativeTarget "UnityMonitor" */;
+			buildConfigurationList = 15DDB6A61CBBB77A002B8163 /* Build configuration list for PBXNativeTarget "Watchdog" */;
 			buildPhases = (
 				6D0FBBD230B0E43957A406F1 /* Check Pods Manifest.lock */,
 				15DDB67F1CBBB77A002B8163 /* Sources */,
@@ -199,14 +199,14 @@
 			);
 			dependencies = (
 			);
-			name = UnityMonitor;
+			name = Watchdog;
 			productName = UnityMonitor;
 			productReference = 15DDB6831CBBB77A002B8163 /* Watchdog.app */;
 			productType = "com.apple.product-type.application";
 		};
-		15DDB69B1CBBB77A002B8163 /* UnityMonitorTests */ = {
+		15DDB69B1CBBB77A002B8163 /* WatchdogTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 15DDB6A91CBBB77A002B8163 /* Build configuration list for PBXNativeTarget "UnityMonitorTests" */;
+			buildConfigurationList = 15DDB6A91CBBB77A002B8163 /* Build configuration list for PBXNativeTarget "WatchdogTests" */;
 			buildPhases = (
 				15DDB6981CBBB77A002B8163 /* Sources */,
 				15DDB6991CBBB77A002B8163 /* Frameworks */,
@@ -217,9 +217,9 @@
 			dependencies = (
 				15DDB69E1CBBB77A002B8163 /* PBXTargetDependency */,
 			);
-			name = UnityMonitorTests;
+			name = WatchdogTests;
 			productName = UnityMonitorTests;
-			productReference = 15DDB69C1CBBB77A002B8163 /* UnityMonitorTests.xctest */;
+			productReference = 15DDB69C1CBBB77A002B8163 /* WatchdogTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -233,7 +233,6 @@
 				TargetAttributes = {
 					15DDB6821CBBB77A002B8163 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = F36B3E79A9;
 					};
 					15DDB69B1CBBB77A002B8163 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -241,7 +240,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 15DDB67E1CBBB77A002B8163 /* Build configuration list for PBXProject "UnityMonitor" */;
+			buildConfigurationList = 15DDB67E1CBBB77A002B8163 /* Build configuration list for PBXProject "Watchdog" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -254,8 +253,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				15DDB6821CBBB77A002B8163 /* UnityMonitor */,
-				15DDB69B1CBBB77A002B8163 /* UnityMonitorTests */,
+				15DDB6821CBBB77A002B8163 /* Watchdog */,
+				15DDB69B1CBBB77A002B8163 /* WatchdogTests */,
 			);
 		};
 /* End PBXProject section */
@@ -356,7 +355,7 @@
 /* Begin PBXTargetDependency section */
 		15DDB69E1CBBB77A002B8163 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 15DDB6821CBBB77A002B8163 /* UnityMonitor */;
+			target = 15DDB6821CBBB77A002B8163 /* Watchdog */;
 			targetProxy = 15DDB69D1CBBB77A002B8163 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -466,6 +465,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -475,7 +475,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ch.fhnw.ip5.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = Watchdog;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WARNING_CFLAGS = "-w";
@@ -490,6 +490,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -499,7 +500,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ch.fhnw.ip5.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = Watchdog;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WARNING_CFLAGS = "-w";
@@ -522,7 +523,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ch.fhnw.ip5.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UnityMonitor.app/UnityMonitor";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Watchdog.app/Watchdog";
 			};
 			name = Debug;
 		};
@@ -538,14 +539,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ch.fhnw.ip5.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UnityMonitor.app/UnityMonitor";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Watchdog.app/Watchdog";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		15DDB67E1CBBB77A002B8163 /* Build configuration list for PBXProject "UnityMonitor" */ = {
+		15DDB67E1CBBB77A002B8163 /* Build configuration list for PBXProject "Watchdog" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				15DDB6A41CBBB77A002B8163 /* Debug */,
@@ -554,7 +555,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		15DDB6A61CBBB77A002B8163 /* Build configuration list for PBXNativeTarget "UnityMonitor" */ = {
+		15DDB6A61CBBB77A002B8163 /* Build configuration list for PBXNativeTarget "Watchdog" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				15DDB6A71CBBB77A002B8163 /* Debug */,
@@ -563,7 +564,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		15DDB6A91CBBB77A002B8163 /* Build configuration list for PBXNativeTarget "UnityMonitorTests" */ = {
+		15DDB6A91CBBB77A002B8163 /* Build configuration list for PBXNativeTarget "WatchdogTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				15DDB6AA1CBBB77A002B8163 /* Debug */,
