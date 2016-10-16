@@ -30,8 +30,10 @@
 - (void)handleMessage:(OSCMessage*)message {
     //split address
     NSArray *components = [message.address componentsSeparatedByString:@"/"];
-    if ([[components objectAtIndex:1] isEqualToString:@"profiler"]) {
-        NSString *parameter = [components objectAtIndex:2];
+    if ([[components objectAtIndex:1] isEqualToString:@"UnityWatchdog"]) {
+        NSString *displaySlot = [components objectAtIndex:2];
+        int slotNumber = [[displaySlot substringFromIndex:[displaySlot length]-1] intValue];
+        NSString *parameter = [components objectAtIndex:3];
         NSString *args = [[message.arguments valueForKey:@"description"] componentsJoinedByString:@":"];
 
         
@@ -39,68 +41,35 @@
         param_formated_sel = [param_formated_sel lowercaseString];
         param_formated_sel = [param_formated_sel stringByAppendingString:@":"];
         
-        SEL selector = NSSelectorFromString(param_formated_sel);
-        if ([self respondsToSelector:selector]) {
-            [self performSelector:selector withObject:[NSArray arrayWithObjects:parameter, args, nil]];
-            
-        }
-    }
-}
-
-- (void)vsync:(NSArray *)container{
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.owner displayParam:[container objectAtIndex:0] withValue: [container objectAtIndex:1]];
-    });
-}
-
-- (void)triangles:(NSArray *)container{
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.owner displayParam:[container objectAtIndex:0] withValue: [container objectAtIndex:1]];
-    });
-}
-
-- (void)gc_allocated:(NSArray *)container{
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.owner displayParam:[container objectAtIndex:0] withValue: [container objectAtIndex:1]];
-    });
-}
-
-- (void)mesh_memory:(NSArray *)container{
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.owner displayParam:[container objectAtIndex:0] withValue: [container objectAtIndex:1]];
-    });
-}
-
-- (void)contacts:(NSArray *)container{
-    if ([[container objectAtIndex:1] isEqualToString:@"1"]) {
+//        SEL selector = NSSelectorFromString(param_formated_sel);
+//        if ([self respondsToSelector:selector]) {
+//            [self performSelector:selector withObject:[NSArray arrayWithObjects:parameter, args, nil]];
+//            
+//        }
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.owner vibrate];
-        });
+            [self.owner displayParam:parameter withValue: args inSlot:slotNumber];
+                });
+        
     }
+    
+    
 }
 
-- (void)rendering:(NSArray *)container{
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.owner displayParam:[container objectAtIndex:0] withValue: [container objectAtIndex:1]];
-    });
-}
+//- (void)vsync:(NSArray *)container{
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        [self.owner displayParam:[container objectAtIndex:0] withValue: [container objectAtIndex:1]];
+//    });
+//}
+//
+//
+//- (void)contacts:(NSArray *)container{
+//    if ([[container objectAtIndex:1] isEqualToString:@"1"]) {
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [self.owner vibrate];
+//        });
+//    }
+//}
 
-- (void)physics:(NSArray *)container{
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.owner displayParam:[container objectAtIndex:0] withValue: [container objectAtIndex:1]];
-    });
-}
 
-- (void)active_rigidbodies:(NSArray *)container{
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.owner displayParam:[container objectAtIndex:0] withValue: [container objectAtIndex:1]];
-    });
-}
-
-- (void)total_audio_cpu:(NSArray *)container{
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.owner displayParam:[container objectAtIndex:0] withValue: [container objectAtIndex:1]];
-    });
-}
 
 @end

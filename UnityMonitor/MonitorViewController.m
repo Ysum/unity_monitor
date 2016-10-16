@@ -33,56 +33,65 @@
 }
 
 
-- (void)displayParam: (NSString *)parameter withValue: (NSString *)value {
+- (void)displayParam: (NSString *)parameter withValue: (NSString *)value inSlot:(int)slot{
     
-    [self.parameter1_label setTextColor:[UIColor blueColor]];
-    [self.value1_label setTextColor:[UIColor blueColor]];
-    
-    [self.parameter2_label setTextColor:[UIColor blueColor]];
-    [self.value2_label setTextColor:[UIColor blueColor]];
-    
-    [self.parameter3_label setTextColor:[UIColor blueColor]];
-    [self.value3_label setTextColor:[UIColor blueColor]];
-    
-    [self.parameter4_label setTextColor:[UIColor blueColor]];
-    [self.value4_label setTextColor:[UIColor blueColor]];
-
-    [self.parameter5_label setTextColor:[UIColor blueColor]];
-    [self.value5_label setTextColor:[UIColor blueColor]];
-    
-    [self.parameter6_label setTextColor:[UIColor blueColor]];
-    [self.value6_label setTextColor:[UIColor blueColor]];
-    
-    [self.parameter7_label setTextColor:[UIColor blueColor]];
-    [self.value7_label setTextColor:[UIColor blueColor]];
-    
-    [self.parameter8_label setTextColor:[UIColor blueColor]];
-    [self.value8_label setTextColor:[UIColor blueColor]];
-    
-    if ([parameter isEqualToString:@"VSync"]) {
-        [self.parameter1_label setText:parameter];
-        [self.value1_label setText: value];
-    } else if ([parameter isEqualToString:@"Rendering"]) {
-        [self.parameter2_label setText:parameter];
-        [self.value2_label setText: value];
-    } else if ([parameter isEqualToString:@"Physics"]) {
-        [self.parameter3_label setText:parameter];
-        [self.value3_label setText: value];
-    } else if ([parameter isEqualToString:@"GC Allocated"]) {
-        [self.parameter4_label setText:parameter];
-        [self.value4_label setText: value];
-    } else if ([parameter isEqualToString:@"Triangles"]) {
-        [self.parameter5_label setText:parameter];
-        [self.value5_label setText: value];
-    } else if ([parameter isEqualToString:@"Mesh Memory"]) {
-        [self.parameter6_label setText:parameter];
-        [self.value6_label setText: value];
-    } else if ([parameter isEqualToString:@"Total Audio CPU"]) {
-        [self.parameter7_label setText:parameter];
-        [self.value7_label setText: value];
-    } else if ([parameter isEqualToString:@"Active Rigidbodies"]) {
-        [self.parameter8_label setText:parameter];
-        [self.value8_label setText: value];
+    switch (slot) {
+        case 1: {
+            [self.parameter1_label setTextColor:[UIColor blueColor]];
+            [self.value1_label setTextColor:[UIColor blueColor]];
+            [self.parameter1_label setText:parameter];
+            [self.value1_label setText: value];
+            break;
+        }
+        case 2: {
+            [self.parameter2_label setTextColor:[UIColor blueColor]];
+            [self.value2_label setTextColor:[UIColor blueColor]];
+            [self.parameter2_label setText:parameter];
+            [self.value2_label setText: value];
+            break;
+        }
+        case 3: {
+            [self.parameter3_label setTextColor:[UIColor blueColor]];
+            [self.value3_label setTextColor:[UIColor blueColor]];
+            [self.parameter3_label setText:parameter];
+            [self.value3_label setText: value];
+            break;
+        }
+        case 4: {
+            [self.parameter4_label setTextColor:[UIColor blueColor]];
+            [self.value4_label setTextColor:[UIColor blueColor]];
+            [self.parameter4_label setText:parameter];
+            [self.value4_label setText: value];
+            break;
+        }
+        case 5: {
+            [self.parameter5_label setTextColor:[UIColor blueColor]];
+            [self.value5_label setTextColor:[UIColor blueColor]];
+            [self.parameter5_label setText:parameter];
+            [self.value5_label setText: value];
+            break;
+        }
+        case 6: {
+            [self.parameter6_label setTextColor:[UIColor blueColor]];
+            [self.value6_label setTextColor:[UIColor blueColor]];
+            [self.parameter6_label setText:parameter];
+            [self.value6_label setText: value];
+            break;
+        }
+        case 7: {
+            [self.parameter7_label setTextColor:[UIColor blueColor]];
+            [self.value7_label setTextColor:[UIColor blueColor]];
+            [self.parameter7_label setText:parameter];
+            [self.value7_label setText: value];
+            break;
+        }
+        case 8: {
+            [self.parameter8_label setTextColor:[UIColor blueColor]];
+            [self.value8_label setTextColor:[UIColor blueColor]];
+            [self.parameter8_label setText:parameter];
+            [self.value8_label setText: value];
+            break;
+        }
     }
 
 

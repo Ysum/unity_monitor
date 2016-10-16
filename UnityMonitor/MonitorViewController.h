@@ -39,7 +39,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *mute_button;
 @property (weak, nonatomic) IBOutlet UISlider *freq_slider;
 
-- (void)displayParam: (NSString *)parameter withValue: (NSString *)value;
+- (void)displayParam: (NSString *)parameter withValue: (NSString *)value inSlot:(int)slot;
 - (void)vibrate;
 
 
