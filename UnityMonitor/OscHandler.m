@@ -36,13 +36,43 @@
         //get adress and values fields
         NSString *displaySlot = [components objectAtIndex:2];
         int slotNumber = [[displaySlot substringFromIndex:[displaySlot length]-1] intValue];
-        NSString *parameter = [components objectAtIndex:3];
-        NSString *args = [[message.arguments valueForKey:@"description"] componentsJoinedByString:@":"];
+        NSString *msg_type = [components objectAtIndex:3];
+        NSString *parameter;
+        if(![msg_type isEqualToString:@"Vibra"]) {
+            parameter = [components objectAtIndex:4];
+        }
         
-        //notify view
+        //get argument
+        NSString *arg = [[message.arguments valueForKey:@"description"] componentsJoinedByString:@":"];
+        
+        //dispatch message target in the GUI thread
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.owner displayParam:parameter withValue: args inSlot:slotNumber];
-                });
+            //process based on messege type
+            if ([msg_type isEqualToString:@"Display"]) {
+                //display
+                [self.owner displayParam:parameter withValue:arg inSlot:slotNumber];
+            } else if ([msg_type isEqualToString:@"Vibra"]) {
+                //vibra
+                [self.owner vibrate];
+            } else if ([msg_type isEqualToString:@"Sound"]) {
+                if ([parameter isEqualToString:@"Freq"]) {
+                    //sound freq if applicable
+                    [self.owner soundFreq:[arg floatValue]];
+                } else if ([parameter isEqualToString:@"Interval"]) {
+                    //start beep
+                    [self.owner soundEnable:YES];
+                    [self.owner soundInterval:[arg intValue]];
+                    
+                    //stop audio
+                    if ([arg intValue] == 0) {
+                        [self.owner soundEnable:NO];
+                    }
+                }
+                
+            }
+        });
+
+        
     }
     
 }

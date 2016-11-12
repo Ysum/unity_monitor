@@ -21,112 +21,69 @@
 @implementation MonitorViewController
 
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.patch = [[PDPatch alloc] initWithFile:@"main.pd"];
     self.oschandler = [[OscHandler alloc]initWithOwner:self];
-
+    
+    // init blank monitor data
+    _monitorData = [[NSMutableArray alloc] init];
+    for (int i = 0; i < 10; i++) {
+        NSMutableArray *watcher = [NSMutableArray arrayWithObjects:@"", @"", nil];
+        [_monitorData addObject:watcher];
+    }
+    
 }
 
 - (void)loadView
 {
-    UITableView *tableView = [[UITableView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame] style:UITableViewStylePlain];
-    tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
-    tableView.delegate = self;
-    tableView.dataSource = self;
-    [tableView reloadData];
+    _tableView = [[UITableView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame] style:UITableViewStylePlain];
+    _tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    [_tableView reloadData];
     
-    self.view = tableView;
+    _tableView.contentInset = UIEdgeInsetsMake(50.0f, 0.0f, 0.0f, 0.0f);
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _tableView.allowsSelection = NO;
+    self.view = _tableView;
 }
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return [_monitorData count];
 }
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return @"Unity Profiler Watchers";
+}
+
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *watcher = @"Watcher";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:watcher];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:watcher];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:watcher];
     }
     
-    cell.textLabel.text = @"test";
+    NSMutableArray *data = [_monitorData objectAtIndex:indexPath.row];
+    cell.textLabel.text =  [data objectAtIndex:0];
+    cell.detailTextLabel.text = [data objectAtIndex:1];
     
     return cell;
 }
 
 - (void)displayParam: (NSString *)parameter withValue: (NSString *)value inSlot:(int)slot{
-    
-//    switch (slot) {
-//        case 1: {
-//
-//            [self.parameter1_label setText:parameter];
-//            [self.value1_label setText:value];
-//            [self.value1_label setHighlighted:YES];
-//            break;
-//        }
-//            
-//        case 2: {
-//            [self.parameter2_label setTextColor:[UIColor blueColor]];
-//            [self.value2_label setTextColor:[UIColor blueColor]];
-//            [self.parameter2_label setText:parameter];
-//            [self.value2_label setText:value];
-//            break;
-//        }
-//            
-//        case 3: {
-//            [self.parameter3_label setTextColor:[UIColor blueColor]];
-//            [self.value3_label setTextColor:[UIColor blueColor]];
-//            [self.parameter3_label setText:parameter];
-//            [self.value3_label setText:value];
-//            break;
-//        }
-//            
-//        case 4: {
-//            [self.parameter4_label setTextColor:[UIColor blueColor]];
-//            [self.value4_label setTextColor:[UIColor blueColor]];
-//            [self.parameter4_label setText:parameter];
-//            [self.value4_label setText:value];
-//            break;
-//        }
-//            
-//        case 5: {
-//            [self.parameter5_label setTextColor:[UIColor blueColor]];
-//            [self.value5_label setTextColor:[UIColor blueColor]];
-//            [self.parameter5_label setText:parameter];
-//            [self.value5_label setText:value];
-//            break;
-//        }
-//            
-//        case 6: {
-//            [self.parameter6_label setTextColor:[UIColor blueColor]];
-//            [self.value6_label setTextColor:[UIColor blueColor]];
-//            [self.parameter6_label setText:parameter];
-//            [self.value6_label setText:value];
-//            break;
-//        }
-//            
-//        case 7: {
-//            [self.parameter7_label setTextColor:[UIColor blueColor]];
-//            [self.value7_label setTextColor:[UIColor blueColor]];
-//            [self.parameter7_label setText:parameter];
-//            [self.value7_label setText:value];
-//            break;
-//        }
-//            
-//        case 8: {
-//            [self.parameter8_label setTextColor:[UIColor blueColor]];
-//            [self.value8_label setTextColor:[UIColor blueColor]];
-//            [self.parameter8_label setText:parameter];
-//            [self.value8_label setText:value];
-//            break;
-//        }
-//    }
+    NSMutableArray *entry = [[NSMutableArray alloc] init];
+    [entry addObjectsFromArray:@[parameter, value]];
+    [_monitorData replaceObjectAtIndex:slot-1 withObject:entry];
+    [_tableView reloadData];
 }
 
 - (void)soundEnable:(BOOL)b {

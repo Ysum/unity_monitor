@@ -13,11 +13,12 @@
 
 @interface MonitorViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
-@property (strong, nonatomic) PDPatch *patch;
-@property (strong, nonatomic) OscHandler *oschandler;
+@property (nonatomic, strong) PDPatch *patch;
+@property (nonatomic, strong) OscHandler *oschandler;
 
-@property (nonatomic, strong) NSArray *monitorData;
+@property (nonatomic, strong) NSMutableArray *monitorData;
 
+@property (nonatomic, strong) UITableView *tableView;
 
 - (void)displayParam: (NSString *)parameter withValue: (NSString *)value inSlot:(int)slot;
 
