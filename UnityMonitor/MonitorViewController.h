@@ -35,11 +35,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *value7_label;
 @property (weak, nonatomic) IBOutlet UILabel *value8_label;
 
-@property (weak, nonatomic) IBOutlet UIButton *vibrate_button;
-@property (weak, nonatomic) IBOutlet UIButton *mute_button;
-@property (weak, nonatomic) IBOutlet UISlider *freq_slider;
-
 - (void)displayParam: (NSString *)parameter withValue: (NSString *)value inSlot:(int)slot;
+
+- (void)soundEnable:(BOOL)b;
+- (void)soundFreq:(float)f;
+- (void)soundInterval:(int)i;
+
 - (void)vibrate;
 
 

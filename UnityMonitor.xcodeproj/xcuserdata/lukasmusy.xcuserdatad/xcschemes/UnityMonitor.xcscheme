@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "15DDB6821CBBB77A002B8163"
-               BuildableName = "UnityMonitor.app"
+               BuildableName = "Watchdog.app"
                BlueprintName = "UnityMonitor"
                ReferencedContainer = "container:UnityMonitor.xcodeproj">
             </BuildableReference>
@@ -57,7 +57,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "15DDB6821CBBB77A002B8163"
-            BuildableName = "UnityMonitor.app"
+            BuildableName = "Watchdog.app"
             BlueprintName = "UnityMonitor"
             ReferencedContainer = "container:UnityMonitor.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "15DDB6821CBBB77A002B8163"
-            BuildableName = "UnityMonitor.app"
+            BuildableName = "Watchdog.app"
             BlueprintName = "UnityMonitor"
             ReferencedContainer = "container:UnityMonitor.xcodeproj">
          </BuildableReference>
@@ -99,7 +99,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "15DDB6821CBBB77A002B8163"
-            BuildableName = "UnityMonitor.app"
+            BuildableName = "Watchdog.app"
             BlueprintName = "UnityMonitor"
             ReferencedContainer = "container:UnityMonitor.xcodeproj">
          </BuildableReference>
