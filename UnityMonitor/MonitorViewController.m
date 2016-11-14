@@ -37,8 +37,7 @@
     
 }
 
-- (void)loadView
-{
+- (void)loadView {
     _tableView = [[UITableView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame] style:UITableViewStylePlain];
     _tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
     _tableView.delegate = self;
@@ -56,7 +55,7 @@
     return 1;
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [_monitorData count];
 }
 
@@ -65,7 +64,7 @@
 }
 
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *watcher = @"Watcher";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:watcher];
     if (cell == nil) {
@@ -81,13 +80,14 @@
 
 - (void)displayParam: (NSString *)parameter withValue: (NSString *)value inSlot:(int)slot{
     NSMutableArray *entry = [[NSMutableArray alloc] init];
-    [entry addObjectsFromArray:@[parameter, value]];
+    [entry addObjectsFromArray:@[parameter, value, @""]];
     [_monitorData replaceObjectAtIndex:slot-1 withObject:entry];
     [_tableView reloadData];
 }
 
 - (void)soundEnable:(BOOL)b {
     float t = (float) b;
+    [PdBase sendFloat:1 toReceiver:@"volume"];
     [PdBase sendFloat:t toReceiver:@"enable"];
 }
 
