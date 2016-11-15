@@ -31,10 +31,9 @@
     // init blank monitor data
     _monitorData = [[NSMutableArray alloc] init];
     for (int i = 0; i < 10; i++) {
-        NSMutableArray *watcher = [NSMutableArray arrayWithObjects:@"", @"", nil];
+        NSMutableArray *watcher = [NSMutableArray arrayWithObjects:@"", @"", @"", nil];
         [_monitorData addObject:watcher];
     }
-    
 }
 
 - (void)loadView {
@@ -72,17 +71,50 @@
     }
     
     NSMutableArray *data = [_monitorData objectAtIndex:indexPath.row];
+    
     cell.textLabel.text =  [data objectAtIndex:0];
     cell.detailTextLabel.text = [data objectAtIndex:1];
     
+    if ([[data objectAtIndex:2] isEqual:@"marked"]) {
+        cell.backgroundColor = [UIColor redColor];
+        cell.textLabel.textColor = [UIColor whiteColor];
+        cell.detailTextLabel.textColor = [UIColor whiteColor];
+        
+    } else {
+        cell.backgroundColor = [UIColor whiteColor];
+        cell.textLabel.textColor = [UIColor blueColor];
+        cell.detailTextLabel.textColor = [UIColor blueColor];
+    }
+  
     return cell;
 }
 
 - (void)displayParam: (NSString *)parameter withValue: (NSString *)value inSlot:(int)slot{
     NSMutableArray *entry = [[NSMutableArray alloc] init];
-    [entry addObjectsFromArray:@[parameter, value, @""]];
+    [entry addObjectsFromArray:@[parameter, value, [NSNull null]]];
     [_monitorData replaceObjectAtIndex:slot-1 withObject:entry];
     [_tableView reloadData];
+}
+
+- (void)soundAlarmWithRate: (int)interval fromSlot:(int)slot {
+    [[_monitorData objectAtIndex:slot-1] replaceObjectAtIndex:2 withObject:@"marked"];
+    [self soundEnable:YES];
+    [self soundInterval:interval];
+    [self markPropAlarmActive:YES Slot:slot];
+}
+
+- (void)vibraAlarmfromSlot:(int)slot {
+    [self vibrate];
+}
+
+- (void)markPropAlarmActive:(BOOL)b Slot:(int)slot {
+    [[_monitorData objectAtIndex:slot-1] replaceObjectAtIndex:2 withObject:b?@"marked":@""];
+}
+
+- (void)unmarkAll {
+    for (int i = 1; i <= 10; i++) {
+        [self markPropAlarmActive:NO Slot:i];
+    }
 }
 
 - (void)soundEnable:(BOOL)b {

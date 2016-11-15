@@ -11,13 +11,19 @@
 
 @class MonitorViewController;
 
-@interface OscHandler : NSObject <OSCServerDelegate>
+@interface OscHandler : NSObject <OSCServerDelegate> {
+//    NSDate *startTimer;
+    NSTimer *timeoutTimer;
+}
 
 @property (strong, nonatomic) OSCServer *server;
 @property (strong, nonatomic) MonitorViewController *owner;
 
+
 - (instancetype)initWithOwner:(MonitorViewController*)owner;
 - (void)handleMessage:(OSCMessage*)message;
 
+- (void)timeoutDetect:(NSTimer*)sender;
+- (void)startTimer;
 
 @end

@@ -20,13 +20,21 @@
 
 @property (nonatomic, strong) UITableView *tableView;
 
-- (void)displayParam: (NSString *)parameter withValue: (NSString *)value inSlot:(int)slot;
+- (void)displayParam: (NSString *)parameter withValue: (NSString *)interval inSlot:(int)slot;
+- (void)soundAlarmWithRate: (int)value fromSlot:(int)slot;
+- (void)vibraAlarmfromSlot:(int)slot;
+
+- (void)markPropAlarmActive:(BOOL)b Slot:(int)slot;
 
 - (void)soundEnable:(BOOL)b;
 - (void)soundFreq:(float)f;
 - (void)soundInterval:(int)i;
 
+- (void)panic;
+
 - (void)vibrate;
+
+- (void)unmarkAll;
 
 
 @end

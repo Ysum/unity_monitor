@@ -47,34 +47,53 @@
         
         //dispatch message target in the GUI thread
         dispatch_async(dispatch_get_main_queue(), ^{
+            
             //process based on messege type
             if ([msg_type isEqualToString:@"Display"]) {
                 //display
                 [self.owner displayParam:parameter withValue:arg inSlot:slotNumber];
+                
             } else if ([msg_type isEqualToString:@"Vibra"]) {
                 //vibra
-                [self.owner vibrate];
+                [self.owner vibraAlarmfromSlot:slotNumber];
+                
             } else if ([msg_type isEqualToString:@"Sound"]) {
                 if ([parameter isEqualToString:@"Freq"]) {
                     //sound freq if applicable
                     [self.owner soundFreq:[arg floatValue]];
+                    
                 } else if ([parameter isEqualToString:@"Interval"]) {
                     //start beep
-                    [self.owner soundEnable:YES];
-                    [self.owner soundInterval:[arg intValue]];
-                    
+                    [self.owner soundAlarmWithRate:[arg intValue] fromSlot:slotNumber];
                     //stop audio
                     if ([arg intValue] == 0) {
                         [self.owner soundEnable:NO];
                     }
+                    
+                    //timer for disabling audio when no more messages received
+                    if (!timeoutTimer) {
+                        [self startTimer];
+                    } else {
+                        //reset timer
+                        [timeoutTimer invalidate];
+                        [self startTimer];
+                    }
                 }
-                
             }
         });
-
         
     }
     
+}
+
+- (void)startTimer {
+    timeoutTimer = [NSTimer scheduledTimerWithTimeInterval:0.5f target:self selector:@selector(timeoutDetect:) userInfo:nil repeats:NO];
+}
+
+- (void)timeoutDetect:(NSTimer*)sender {
+    [self.owner soundEnable:NO];
+    [self.owner unmarkAll];
+    [timeoutTimer invalidate];
 }
 
 
