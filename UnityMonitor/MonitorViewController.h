@@ -7,34 +7,31 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PDPatch.h"
+#import "PDController.h"
 
 @class OscHandler;
 
-@interface MonitorViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface MonitorViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> 
 
-@property (nonatomic, strong) PDPatch *patch;
-@property (nonatomic, strong) OscHandler *oschandler;
-
+//View
+@property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *monitorData;
 
-@property (nonatomic, strong) UITableView *tableView;
+//OSC
+@property (nonatomic, strong) OscHandler *oschandler;
+
+//PD
+@property (nonatomic, strong) PDController *pd;
 
 - (void)displayParam: (NSString *)parameter withValue: (NSString *)interval inSlot:(int)slot;
+- (void)markSlotAlarmActive:(BOOL)b Slot:(int)slot;
+- (void)unmarkAll;
+
 - (void)soundAlarmWithRate: (int)value fromSlot:(int)slot;
 - (void)vibraAlarmfromSlot:(int)slot;
 
-- (void)markPropAlarmActive:(BOOL)b Slot:(int)slot;
-
-- (void)soundEnable:(BOOL)b;
-- (void)soundFreq:(float)f;
-- (void)soundInterval:(int)i;
-
-- (void)panic;
-
 - (void)vibrate;
 
-- (void)unmarkAll;
 
 
 @end

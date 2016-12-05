@@ -45,7 +45,7 @@
         //get argument
         NSString *arg = [[message.arguments valueForKey:@"description"] componentsJoinedByString:@":"];
         
-        //dispatch message target in the GUI thread
+        //dispatch message to target in the GUI thread
         dispatch_async(dispatch_get_main_queue(), ^{
             
             //process based on messege type
@@ -60,14 +60,14 @@
             } else if ([msg_type isEqualToString:@"Sound"]) {
                 if ([parameter isEqualToString:@"Freq"]) {
                     //sound freq if applicable
-                    [self.owner soundFreq:[arg floatValue]];
+                    [self.owner.pd freq:[arg floatValue]];
                     
                 } else if ([parameter isEqualToString:@"Interval"]) {
                     //start beep
                     [self.owner soundAlarmWithRate:[arg intValue] fromSlot:slotNumber];
                     //stop audio
                     if ([arg intValue] == 0) {
-                        [self.owner soundEnable:NO];
+                        [self.owner.pd enable:NO];
                     }
                     
                     //timer for disabling audio when no more messages received
@@ -91,7 +91,7 @@
 }
 
 - (void)timeoutDetect:(NSTimer*)sender {
-    [self.owner soundEnable:NO];
+    [self.owner.pd enable:NO];
     [self.owner unmarkAll];
     [timeoutTimer invalidate];
 }

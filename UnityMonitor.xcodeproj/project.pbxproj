@@ -20,19 +20,8 @@
 		15DDB6921CBBB77A002B8163 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15DDB6901CBBB77A002B8163 /* Main.storyboard */; };
 		15DDB6941CBBB77A002B8163 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15DDB6931CBBB77A002B8163 /* Images.xcassets */; };
 		15DDB6971CBBB77A002B8163 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15DDB6951CBBB77A002B8163 /* LaunchScreen.xib */; };
-		15DDB6A31CBBB77A002B8163 /* UnityMonitorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DDB6A21CBBB77A002B8163 /* UnityMonitorTests.m */; };
 		25F96F7F57D66E93A94891CD /* libPods-UnityMonitor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C088D0AC1B766BCD4AA9EAE8 /* libPods-UnityMonitor.a */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		15DDB69D1CBBB77A002B8163 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 15DDB67B1CBBB77A002B8163 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 15DDB6821CBBB77A002B8163;
-			remoteInfo = UnityMonitor;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1543EFD61D314EDB003EE4D3 /* OscHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscHandler.h; sourceTree = "<group>"; };
@@ -55,9 +44,6 @@
 		15DDB6911CBBB77A002B8163 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		15DDB6931CBBB77A002B8163 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		15DDB6961CBBB77A002B8163 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		15DDB69C1CBBB77A002B8163 /* UnityMonitorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnityMonitorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		15DDB6A11CBBB77A002B8163 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		15DDB6A21CBBB77A002B8163 /* UnityMonitorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnityMonitorTests.m; sourceTree = "<group>"; };
 		3BFF110FD1FDAFF9747E3B49 /* Pods-UnityMonitor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnityMonitor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnityMonitor/Pods-UnityMonitor.debug.xcconfig"; sourceTree = "<group>"; };
 		9BEBE756C9EBD04862B8B1DE /* Pods-UnityMonitor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnityMonitor.release.xcconfig"; path = "Pods/Target Support Files/Pods-UnityMonitor/Pods-UnityMonitor.release.xcconfig"; sourceTree = "<group>"; };
 		C088D0AC1B766BCD4AA9EAE8 /* libPods-UnityMonitor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UnityMonitor.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,13 +58,6 @@
 				157F40291CC6B017009C9931 /* CFNetwork.framework in Frameworks */,
 				157F40271CC6B00E009C9931 /* Security.framework in Frameworks */,
 				25F96F7F57D66E93A94891CD /* libPods-UnityMonitor.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		15DDB6991CBBB77A002B8163 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,7 +81,6 @@
 				157F40281CC6B017009C9931 /* CFNetwork.framework */,
 				157F40261CC6B00E009C9931 /* Security.framework */,
 				15DDB6851CBBB77A002B8163 /* UnityMonitor */,
-				15DDB69F1CBBB77A002B8163 /* UnityMonitorTests */,
 				15DDB6841CBBB77A002B8163 /* Products */,
 				844B3E57B7164A9139B65EC5 /* Pods */,
 				C6D27DCF3EF0E5F8E985DC48 /* Frameworks */,
@@ -113,7 +91,6 @@
 			isa = PBXGroup;
 			children = (
 				15DDB6831CBBB77A002B8163 /* Watchdog.app */,
-				15DDB69C1CBBB77A002B8163 /* UnityMonitorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -142,23 +119,6 @@
 			children = (
 				15DDB6871CBBB77A002B8163 /* Info.plist */,
 				15DDB6881CBBB77A002B8163 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		15DDB69F1CBBB77A002B8163 /* UnityMonitorTests */ = {
-			isa = PBXGroup;
-			children = (
-				15DDB6A21CBBB77A002B8163 /* UnityMonitorTests.m */,
-				15DDB6A01CBBB77A002B8163 /* Supporting Files */,
-			);
-			path = UnityMonitorTests;
-			sourceTree = "<group>";
-		};
-		15DDB6A01CBBB77A002B8163 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				15DDB6A11CBBB77A002B8163 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -204,24 +164,6 @@
 			productReference = 15DDB6831CBBB77A002B8163 /* Watchdog.app */;
 			productType = "com.apple.product-type.application";
 		};
-		15DDB69B1CBBB77A002B8163 /* UnityMonitorTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 15DDB6A91CBBB77A002B8163 /* Build configuration list for PBXNativeTarget "UnityMonitorTests" */;
-			buildPhases = (
-				15DDB6981CBBB77A002B8163 /* Sources */,
-				15DDB6991CBBB77A002B8163 /* Frameworks */,
-				15DDB69A1CBBB77A002B8163 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				15DDB69E1CBBB77A002B8163 /* PBXTargetDependency */,
-			);
-			name = UnityMonitorTests;
-			productName = UnityMonitorTests;
-			productReference = 15DDB69C1CBBB77A002B8163 /* UnityMonitorTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -234,11 +176,6 @@
 					15DDB6821CBBB77A002B8163 = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = F36B3E79A9;
-					};
-					15DDB69B1CBBB77A002B8163 = {
-						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = F36B3E79A9;
-						TestTargetID = 15DDB6821CBBB77A002B8163;
 					};
 				};
 			};
@@ -256,7 +193,6 @@
 			projectRoot = "";
 			targets = (
 				15DDB6821CBBB77A002B8163 /* UnityMonitor */,
-				15DDB69B1CBBB77A002B8163 /* UnityMonitorTests */,
 			);
 		};
 /* End PBXProject section */
@@ -270,13 +206,6 @@
 				15DDB6971CBBB77A002B8163 /* LaunchScreen.xib in Resources */,
 				1551C5601CEB2E560051682F /* main.pd in Resources */,
 				15DDB6941CBBB77A002B8163 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		15DDB69A1CBBB77A002B8163 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,23 +273,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		15DDB6981CBBB77A002B8163 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				15DDB6A31CBBB77A002B8163 /* UnityMonitorTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		15DDB69E1CBBB77A002B8163 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 15DDB6821CBBB77A002B8163 /* UnityMonitor */;
-			targetProxy = 15DDB69D1CBBB77A002B8163 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		15DDB6901CBBB77A002B8163 /* Main.storyboard */ = {
@@ -513,38 +426,6 @@
 			};
 			name = Release;
 		};
-		15DDB6AA1CBBB77A002B8163 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = F36B3E79A9;
-				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = UnityMonitorTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "ch.fhnw.ip5.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UnityMonitor.app/UnityMonitor";
-			};
-			name = Debug;
-		};
-		15DDB6AB1CBBB77A002B8163 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = F36B3E79A9;
-				FRAMEWORK_SEARCH_PATHS = "";
-				INFOPLIST_FILE = UnityMonitorTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "ch.fhnw.ip5.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UnityMonitor.app/UnityMonitor";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -562,15 +443,6 @@
 			buildConfigurations = (
 				15DDB6A71CBBB77A002B8163 /* Debug */,
 				15DDB6A81CBBB77A002B8163 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		15DDB6A91CBBB77A002B8163 /* Build configuration list for PBXNativeTarget "UnityMonitorTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				15DDB6AA1CBBB77A002B8163 /* Debug */,
-				15DDB6AB1CBBB77A002B8163 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

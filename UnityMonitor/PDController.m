@@ -10,4 +10,25 @@
 
 @implementation PDController
 
+-(instancetype)init {
+    self.patch = [[PDPatch alloc] initWithFile:@"main.pd"];
+    return self;
+}
+
+- (void)enable:(BOOL)b {
+    float t = (float) b;
+    [PdBase sendFloat:1 toReceiver:@"volume"];
+    [PdBase sendFloat:t toReceiver:@"enable"];
+}
+
+- (void)freq:(float)f {
+    [PdBase sendFloat:f toReceiver:@"freq"];
+}
+
+- (void)interval:(int)i {
+    [PdBase sendFloat:i toReceiver:@"interval"];
+}
+
+
+
 @end

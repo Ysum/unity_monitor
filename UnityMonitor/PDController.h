@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PDPatch.h"
+
 
 @interface PDController : NSObject
+
+@property (nonatomic, strong) PDPatch *patch;
+
+- (void)enable:(BOOL)b;
+- (void)freq:(float)f;
+- (void)interval:(int)i;
 
 @end

@@ -12,7 +12,6 @@
 #import "OscHandler.h"
 
 
-
 @interface MonitorViewController ()
 
 
@@ -21,12 +20,11 @@
 @implementation MonitorViewController
 
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.patch = [[PDPatch alloc] initWithFile:@"main.pd"];
     self.oschandler = [[OscHandler alloc]initWithOwner:self];
+    self.pd = [[PDController alloc] init];
     
     // init blank monitor data
     _monitorData = [[NSMutableArray alloc] init];
@@ -98,41 +96,31 @@
 
 - (void)soundAlarmWithRate: (int)interval fromSlot:(int)slot {
     [[_monitorData objectAtIndex:slot-1] replaceObjectAtIndex:2 withObject:@"marked"];
-    [self soundEnable:YES];
-    [self soundInterval:interval];
-    [self markPropAlarmActive:YES Slot:slot];
+    [_pd enable:YES];
+    [_pd interval:interval];
+    [self markSlotAlarmActive:YES Slot:slot];
 }
 
 - (void)vibraAlarmfromSlot:(int)slot {
     [self vibrate];
 }
 
-- (void)markPropAlarmActive:(BOOL)b Slot:(int)slot {
+- (void)markSlotAlarmActive:(BOOL)b Slot:(int)slot {
     [[_monitorData objectAtIndex:slot-1] replaceObjectAtIndex:2 withObject:b?@"marked":@""];
 }
 
 - (void)unmarkAll {
     for (int i = 1; i <= 10; i++) {
-        [self markPropAlarmActive:NO Slot:i];
+        [self markSlotAlarmActive:NO Slot:i];
     }
-}
-
-- (void)soundEnable:(BOOL)b {
-    float t = (float) b;
-    [PdBase sendFloat:1 toReceiver:@"volume"];
-    [PdBase sendFloat:t toReceiver:@"enable"];
-}
-
-- (void)soundFreq:(float)f {
-    [PdBase sendFloat:f toReceiver:@"freq"];
-}
-
-- (void)soundInterval:(int)i {
-    [PdBase sendFloat:i toReceiver:@"interval"];
 }
 
 - (void)vibrate {
     AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
+}
+
+- (void)soundEnable: (BOOL)on {
+    [_pd enable:on];
 }
 
 

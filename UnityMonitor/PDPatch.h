@@ -14,6 +14,4 @@
 
 - (instancetype)initWithFile:(NSString *)pdFile;
 
-- (void)pitchUpDown:(BOOL)upDown;
-
 @end

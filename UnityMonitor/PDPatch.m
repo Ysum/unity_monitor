@@ -28,10 +28,5 @@ int osc_modSteps = 1;
     return self;
 }
 
--(void)pitchUpDown:(BOOL)upDown {
-//    osc_freq = upDown ? osc_freq+osc_modSteps : osc_freq-osc_modSteps;
-//    [PdBase sendFloat: osc_freq toReceiver:@"freq"];
-    
-}
 
 @end
